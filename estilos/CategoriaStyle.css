@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f3f3f3;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Barra roja header */
+
+header {
+    height: 60px;
+    background: #ec1c24;
+    display: flex;
+    padding: 0 20px;
+    position: relative;
+    z-index: +3;
+   /* position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%; */
+}
+
+
+.menu-toggle {
+    display: none;
+    margin-left: auto;
+    color: white;
+    line-height: 60px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.logo-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    line-height: 60px;
+    text-transform: uppercase;
+    font-family: 'Anton', sans-serif;
+}
+
+#menu {
+    margin-left: auto;
+}
+
+#menu ul li {
+    display: inline-block;
+}
+
+#menu ul li a {
+    display: inline-block;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    line-height: 60px;
+    padding: 0 8px;
+    text-transform: uppercase;
+    transition: .2s;
+}
+
+#menu ul li a:hover {
+    background: #ff5364;
+}
+
+.show {
+    height: 305px !important;
+}
+
+@media screen and (max-width:700px) {
+    .menu-toggle{
+        display: block;
+    }
+
+    #menu {
+        background: #ec1c24;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 0;
+        border: 1px solid #eee;
+        overflow: hidden;
+        transition: .3s ease-out;
+    }
+
+    #menu ul li {
+        display: block;
+        text-align: center;
+    }
+
+    #menu ul li a {
+        color: white;
+        font-size: 20px;
+        border-bottom: 1px solid #ff5364;
+        width: 100%;
+    }
+
+    #menu ul li a:hover {
+        background: #ff5364;
+    }
+
+    .container{
+        padding: 10px;
+    }
+} 
+
+
+
+/* nav header */
+
+.buscador {
+    padding: 0px;
+}
+
+.buscador .logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.buscador .logo p {
+    color: #b9b9b9;
+}
+
+.buscador form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.buscador .search-bar {
+    width:  70%;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    padding: 0 20px;
+    border-radius: 100px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+.buscador .category {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.buscador .category a {
+    color: #b9b9b9;
+    margin: 10px 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.buscador .category a.active {
+    color: black;
+}
+
+/* GRID */
+
+.grid {
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s linear 0.2s;
+}
+
+.grid.images-loaded {
+    opacity: 1;
+}
+
+.grid .item {
+    position: absolute;
+    display: block;
+    padding: 0;
+    margin: 10px;
+    width: 30.33%;
+}
+
+.grid .container-item {
+    position: relative;
+}
+
+.grid .item img {
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+
+@media screen and (max-width: 770px){
+    .grid .item {
+        width: 45%;
+    }
+    .buscador .search-bar {
+        width: 80%;
+    }
+    
+}
+
+@media screen and (max-width: 480px){
+    .grid .item {
+        width: 90%;
+    }
+
+    .buscador .search-bar{
+        width: 90%;
+    }
+}
+
+
+/* social network */
+section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+section .social-networks a {
+    display: inline-flex;
+    color: white;
+    height: 50px;
+    width: 50px;
+    background: black;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 20px;
+    margin: 0 8px;
+}
+
+@media screen and (max-width: 770px){
+    section .social-networks a{
+        height: 40px;
+        width: 40px;
+        font-size: 20px;
+    }
+}
+
+.social-networks a:hover {
+    transform: scale(1.2);
+}
+
+.social-networks a.facebook {
+    background-color: #3c70a4;
+}
+
+.social-networks a.twitter {
+    background-color: #5bd1d7;
+}
+
+.social-networks a.google {
+    background-color: #ee4540;
+}
+
+.social-networks a.youtube {
+    background-color: #c72c41;
+}
+
+.social-networks a.instagram {
+    background-color: #bb7171;
+}
+
+/* final */
+
+footer .creado-por {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: darkmagenta;
+}

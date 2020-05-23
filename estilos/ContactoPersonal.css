@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url(../img/fondo_cereal.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body:before {
+    content: "";
+    width: 100%;
+    min-height: 120vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: linear-gradient(red,yellow);
+    opacity: 0.3;
+    z-index: -3;
+}
+
+
+/* header */
+
+header {
+    height: 60px;
+    background: #ec1c24;
+    display: flex;
+    padding: 0 20px;
+    position: relative;
+    z-index: +3;
+   /* position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%; */
+}
+
+
+.menu-toggle {
+    display: none;
+    margin-left: auto;
+    color: white;
+    line-height: 60px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.logo-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    line-height: 60px;
+    text-transform: uppercase;
+    font-family: 'Anton', sans-serif;
+}
+
+#menu {
+    margin-left: auto;
+}
+
+#menu ul li {
+    display: inline-block;
+}
+
+#menu ul li a {
+    display: inline-block;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    line-height: 60px;
+    padding: 0 8px;
+    text-transform: uppercase;
+    transition: .2s;
+}
+
+#menu ul li a:hover {
+    background: #ff5364;
+}
+
+.show {
+    height: 125px !important;
+}
+
+@media screen and (max-width:700px) {
+    .menu-toggle{
+        display: block;
+    }
+
+    #menu {
+        background: #ec1c24;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 0;
+        border: 1px solid #eee;
+        overflow: hidden;
+        transition: .3s ease-out;
+    }
+
+    #menu ul li {
+        display: block;
+        text-align: center;
+    }
+
+    #menu ul li a {
+        color: white;
+        font-size: 20px;
+        border-bottom: 1px solid #ff5364;
+        width: 100%;
+    }
+
+    #menu ul li a:hover {
+        background: #ff5364;
+    }
+
+    .container{
+        padding: 10px;
+    }
+} 
+
+
+/* */
+.conten {
+    width: 100%;
+    height: 100%;
+}
+
+.whatshapp {
+    position: relative;
+    text-align: center;
+    padding-top: 40px;
+   
+}
+
+/* final */
+
+footer .creado-por {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: green;
+}
+
+
+/* social network */
+section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+section .social-networks a {
+    display: inline-flex;
+    color: white;
+    height: 50px;
+    width: 50px;
+    background: black;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 20px;
+    margin: 0 8px;
+}
+
+@media screen and (max-width: 770px){
+    section .social-networks a{
+        height: 40px;
+        width: 40px;
+        font-size: 20px;
+    }
+}
+
+.social-networks a:hover {
+    transform: scale(1.2);
+}
+
+.social-networks a.facebook {
+    background-color: #3c70a4;
+}
+
+.social-networks a.twitter {
+    background-color: #5bd1d7;
+}
+
+.social-networks a.google {
+    background-color: #ee4540;
+}
+
+.social-networks a.youtube {
+    background-color: #c72c41;
+}
+
+.social-networks a.instagram {
+    background-color: #bb7171;
+}
+
+/* final */
+
+footer .creado-por {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: darkmagenta;
+}
