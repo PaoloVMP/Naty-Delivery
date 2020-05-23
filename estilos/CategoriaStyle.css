@@ -176,7 +176,7 @@ header {
 .grid {
     position: relative;
     width: 100%;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s linear 0.2s;
 }
 

@@ -5,25 +5,7 @@
 }
 
 body {
-    min-height: 100vh;
-    background-image: url(../img/fondo_cereal.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-body:before {
-    content: "";
-    width: 100%;
-    min-height: 120vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    background: linear-gradient(red,yellow);
-    opacity: 0.3;
-    z-index: -3;
+    background-color: #F2F5A9;
 }
 
 
