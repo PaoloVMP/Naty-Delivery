@@ -177,7 +177,7 @@ header {
     position: relative;
     width: 100%;
     opacity: 1;
-    transition: opacity 0.5s linear 0.2s;
+    transition: opacity 0s linear 0s;
 }
 
 .grid.images-loaded {

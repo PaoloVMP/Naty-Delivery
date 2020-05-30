@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+@import url("https://fonts.googleapis.com/css?family=Metal+Mania");
+
+@font-face {
+    font-family: "Booter - Zero Zero";
+    src: url("Fonts/Booter - Zero Zero.woff") format("woff"),
+         url("Fonts/Booter - Zero Zero.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f3f3f3;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* header */
+
+header {
+    height: 60px;
+    background: #ec1c24;
+    display: flex;
+    padding: 0 20px;
+   /* position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%; */
+}
+
+
+.menu-toggle {
+    display: none;
+    margin-left: auto;
+    color: white;
+    line-height: 60px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.logo-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    line-height: 60px;
+    text-transform: uppercase;
+    font-family: 'Anton', sans-serif;
+}
+
+#menu {
+    margin-left: auto;
+}
+
+#menu ul li {
+    display: inline-block;
+}
+
+#menu ul li a {
+    display: inline-block;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    line-height: 60px;
+    padding: 0 8px;
+    text-transform: uppercase;
+    transition: .2s;
+}
+
+#menu ul li a:hover {
+    background: #ff5364;
+}
+
+.show {
+    height: 305px !important;
+}
+
+@media screen and (max-width:700px) {
+    .menu-toggle{
+        display: block;
+    }
+
+    #menu {
+        background: #ec1c24;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 0;
+        border: 1px solid #eee;
+        overflow: hidden;
+        transition: .3s ease-out;
+    }
+
+    #menu ul li {
+        display: block;
+        text-align: center;
+    }
+
+    #menu ul li a {
+        color: white;
+        font-size: 20px;
+        border-bottom: 1px solid #ff5364;
+        width: 100%;
+    }
+
+    #menu ul li a:hover {
+        background: #ff5364;
+    }
+
+    .container{
+        padding: 10px;
+    }
+} 
+
+section form .container-boton {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn {
+    padding: .67em .67em;
+    cursor: pointer;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #ec1c24;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+    padding: 13px 40px;
+    font-size: 20px;
+}
+
+.btn-a {
+    color: white;
+    background-color: #ec1c24;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+/* table */
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+table .cantidad {
+    width: 35px;
+}
+
+.aling {
+    text-align: right;
+}
+
+.font-weight-bold {
+    width: 70px;
+}

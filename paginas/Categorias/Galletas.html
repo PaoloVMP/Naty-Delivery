@@ -1,770 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="../../img/heart-shaped.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galletas</title>
-    <link rel="stylesheet" href="../../estilos/GalletaStyle.css">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../../estilos/ProductoStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
 
+    <title>Carrito Compras en JavaScript</title>
 </head>
 
 <body>
-
+    
     <header>
         <div class="logo-nav">
             <a href="../../index.html">N A T Y</a>
+            
         </div>
         <nav id="menu">
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Al Por Mayor</a></li>
-                <li><a href="#">Al Por Menor</a></li>
-                <li><a href="#">Redes Sociales</a></li>
-                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Al Por Mayor</a></li>             
+                <li><a href="ContactoPersonal.html">Contacto</a></li>
+                <li><a href="../index.html">Inicio</a></li>
             </ul>
         </nav>
         <div class="menu-toggle">
             <i class="fa fa-bars"></i>
         </div>
     </header>
-    <!--
-    <section class="buscador">
-        <div class="logo">
-            <h1>Productos Tienda</h1>
-            <p>Todo lo que necesitas para tu tienda en una sola tienda</p>
-        </div>
-        <form action="">
-            <input type="text" name="" class="search-bar" id="search-bar" placeholder="Busqueda">
-        </form>
-        <div class="category" id="category">
-            <a href="#" class="active">Todos</a>
-            <a href="#">galletas</a>
-            <a href="#">bocaditos</a>
-            <a href="#">canchas</a>
-            <a href="#">frituras</a>
-            <a href="#">reposterias</a>
-            <a href="#">tiras</a>
-        </div>
-    </section>
- -->
 
+    <main class="container content-section">    
+
+        <h1 class="section-header">Galletas</h1>
+  
+        <div class="shop-items" id="lista-productos">
+                
+                <div class="card shop-item item">
+                        <h4 class="">Agua Light</h4>
+                        <img src="../../img/categorias/galletas/agua line costa.jpg" class="shop-item-image">
+                    <div class="shop-item-details">
+                        <p class="shop-item-price precio">S/. <span class="">3.00</span></p>
+                        <a href="" class="btn btn-primary agregar-carrito" data-id="1">+</a>
+                    </div>
+                </div>
+
+                <div class="card shop-item item">
+                        <h4 class="">Animalito 1k</h4>
+                        <img src="../../img/categorias/galletas/animalito un kilo.jpg" class="shop-item-image">
+                    <div class="shop-item-details">
+                        <p class="shop-item-price precio">S/. <span class="">5.50</span></p>
+                        <a href="" class="btn btn-primary agregar-carrito" data-id="2">+</a>
+                    </div>
+                </div>
+
+                <div class="card shop-item item">
+                        <h4 class="">Animalito 1/2k</h4>
+                        <img src="../../img/categorias/galletas/animalito medio kilo.jpg" class="shop-item-image">
+                    <div class="shop-item-details">
+                        <p class="shop-item-price precio">S/. <span class="">3.00</span></p>
+                        <a href="" class="btn btn-primary agregar-carrito" data-id="3">+</a>
+                    </div>
+                </div>
+
+                <div class="card shop-item item">                    
+                        <h4 class="">Animalito bolsa</h4>
+                        <img src="../../img/categorias/galletas/animalitos bolsa.jpg" class="shop-item-image">
+                    <div class="shop-item-details">
+                        <p class="shop-item-price precio">S/. <span class="">8.50</span></p>
+                        <a href="" class="btn btn-primary agregar-carrito" data-id="4">+</a>
+                    </div>
+                </div>
+
+                <div class="card shop-item item">
+                        <h4 class="">Blackout</h4>
+                        <img src="../../img/categorias/galletas/blackout.jpg" class="shop-item-image">
+                    <div class="shop-item-details">
+                        <p class="shop-item-price precio">S/. <span class="">2.00</span></p>
+                        <a href="" class="btn btn-primary agregar-carrito" data-id="5">+</a>
+                    </div>
+                </div>
+
+                <div class="card shop-item item">
+                        <h4 class="">Cancun</h4>
+                        <img src="../../img/categorias/galletas/cancun.jpg" class="shop-item-image">
+                    <div class="shop-item-details">
+                        <p class="shop-item-price precio">S/. <span class="">2.50</span></p>
+                        <a href="" class="btn btn-primary agregar-carrito" data-id="6">+</a>
+                    </div>
+                </div>
+
+                <div class="card shop-item item">
+                        <h4 class="">Caritas</h4>
+                        <img src="../../img/categorias/galletas/caritas.jpg" class="shop-item-image">
+                    <div class="shop-item-details">
+                        <p class="shop-item-price precio">S/. <span class="">2.50</span></p>
+                        <a href="" class="btn btn-primary agregar-carrito" data-id="7">+</a>
+                    </div>
+                </div>
+            
+                <div class="card shop-item item">
+                        <h4 class="">Casino taco</h4>
+                        <img src="../../img/categorias/galletas/casino taco.jpg" class="shop-item-image">
+                    <div class="shop-item-details">
+                        <p class="shop-item-price precio">S/. <span class="">1.00</span></p>
+                        <a href="" class="btn btn-primary agregar-carrito" data-id="8">+</a>
+                    </div>
+                </div>
+
+                <div class="card shop-item item">
+                        <h4 class="">Casino</h4>
+                        <img src="../../img/categorias/galletas/casino.jpg" class="shop-item-image">
+                    <div class="shop-item-details">
+                        <p class="shop-item-price precio">S/. <span class="">3.00</span></p>
+                        <a href="" class="btn btn-primary agregar-carrito" data-id="9">+</a>
+                    </div>
+                </div>
+        </div>
+    </main>
+    
     <section class="container content-section">
-        <h2 class="section-header">GALLETAS</h2>
-        <div class="shop-items">
-
-            <div class="shop-item item" data-categoria="costa" data-etiquetas="galleta agua line pack 6 unidades"
-                data-description="">
-                <span class="shop-item-title">Agua line</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/agua line costa.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/2.60</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
+        <h2 class="section-header">Productos Seleccionados</h2>
+            <div class="collapse navbar-collapse shop-items" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                        <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                            <table id="lista-carrito" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>  
+                    
+                    <a href="#" id="vaciar-carrito" class="btn btn-primary">Vaciar Carrito</a>
+                    <a href="#" id="procesar-pedido" class="btn btn-primary">Procesar Compra</a>
+                </ul>
             </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Blackout</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/blackout.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/2.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Casino</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/casino.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/3.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Choco bum</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/choco bum.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/3.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Coronita</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/coronita field.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/3.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Morochas</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/morochas.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/5.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Oreo</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/oreo.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/3.20</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Ritz</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/ritz.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/2.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Animalito 1/2Kg</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/animalito medio kilo.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/3.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Animalito 1Kg</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/animalito un kilo.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/5.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Animalito S/1</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/animalitos bolsa.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/8.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Cancun</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/cancun.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/3.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Caritas</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/caritas.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/2.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Casino taco</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/casino taco.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/17.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Cañonazo extra</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/cañonazo extra.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/9.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Cañonazo</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/cañonazo.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/9.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Soda fsj</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/soda familiar.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/17.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-            <!--
-            <div class="shop-item">
-                <span class="shop-item-title">Soda ccf</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/soda field cream crackers familiar.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-            -->
-            <!--
-            <div class="shop-item">
-                <span class="shop-item-title">Soda cc</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/soda field cream crackers.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/6.99</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-            -->
-            <div class="shop-item">
-                <span class="shop-item-title">Soda ff</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/soda field familiar.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/17.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Soda f</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/soda field.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/2.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Soda gourmet</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/soda gourmet.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/1.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Soda 1/2kilo</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/soda medio kilo.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/17.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Soda sj x7</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/soda san jorge x7.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/3.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Soda V</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/soda v.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/2.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Choco soda</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/choco soda field.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/3.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Cracknel</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/cracknel.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/26.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Cua Cua</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/cua cua.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/15.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Doble deleite</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/doble deleite.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/2.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-            <div class="shop-item">
-                <span class="shop-item-title">Doña pepa</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/doña pepa.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/15.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Frac</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/frac.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/3.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Agua san jorge</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/galleta agua san jorge.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/2.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-            <!--
-            <div class="shop-item">
-                <span class="shop-item-title">Chin Chin galleta</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/galleta chin chin.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
--->
-            <div class="shop-item">
-                <span class="shop-item-title">Glacitas</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/glacitas.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/3.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Gretel</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/gretel.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/3.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">integrackers</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/integrackers.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/4.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Kraps</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/kraps.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/3.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Margarita taco</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/margarita taco.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/17.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Margarita</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/margarita.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/2.80</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Marquesitas</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/marquesitas.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/3.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-            <!--
-            <div class="shop-item">
-                <span class="shop-item-title">Mecano</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/mecano.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-
-            <div class="shop-item">
-                <span class="shop-item-title">Mini chips ahoy</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/mini chips ahoy.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Mini choco bum</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/mini choco bum.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Mini chomp</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/mini chomp.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Mini cua cua</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/mini cua cua.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Mini kraps</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/mini kraps.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Mini margaritas</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/mini margaritas.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Mini oreo</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/mini oreo.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Mini picaras</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/mini picaras.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
--->
-            <div class="shop-item">
-                <span class="shop-item-title">Mini GN</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/mini rellenitas.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/7.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-            <!--
-            <div class="shop-item">
-                <span class="shop-item-title">Mini ritz</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/mini ritz.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Mini tentacion</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/mini temtacion.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-            -->
-            <div class="shop-item">
-                <span class="shop-item-title">Morochas snacks</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/morochas snack mini.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/8.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-            <!--
-            <div class="shop-item">
-                <span class="shop-item-title">Morochas XL</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/morochas xl.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-            -->
-
-            <div class="shop-item">
-                <span class="shop-item-title">Morochas</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/morochas.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/5.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Nik chico</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/nik chico.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/2.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Nik grande</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/nik grande.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/5.20</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Obsesion</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/obsesion.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/6.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Oreo taco</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/oreo taco.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <!--
-            <div class="shop-item">
-                <span class="shop-item-title">Picaras XL</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/picaras xl.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-            -->
-            <div class="shop-item">
-                <span class="shop-item-title">Picaras</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/picaras.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/4.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-<!--
-            <div class="shop-item">
-                <span class="shop-item-title">Pokeke</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/pokeke el chavo.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
--->
-
-            <div class="shop-item">
-                <span class="shop-item-title">Rellenitas</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/rellenita.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/2.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Ritz taco</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/ritz taco.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/1.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-        
-            <div class="shop-item">
-                <span class="shop-item-title">Ritz</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/ritz.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/2.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Tentancion</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/tentancion.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/3.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-            <!--
-            <div class="shop-item">
-                <span class="shop-item-title">Travesuras</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/travesuras.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-            -->
-            <div class="shop-item">
-                <span class="shop-item-title">Tuyo</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/tuyo.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/8.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Vainilla f</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/vainilla familiar.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/17.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Vainilla ff</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/vainilla field familiar.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/17.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Vainilla F</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/vainilla field.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/3.20</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Vizzio</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/vizzio display.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/15.50</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <span class="shop-item-title">Wazzu</span>
-                <img class="shop-item-image" src="../../img/categorias/galletas/wazzu.jpg">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">S/0.00</span>
-                    <button class="btn btn-primary shop-item-button" type="button">añadir</button>
-                </div>
-            </div>
-
-        </div>
     </section>
 
-    <section class="container content-section" id="datos">
-        <h2 class="section-header">PRODUCTOS SELECCIONADOS</h2>
-        <div class="cart-row" id="items">
-            <span class="cart-item cart-header cart-column">IMAGEN</span>
-            <span class="cart-price cart-header cart-column">PRECIO</span>
-            <span class="cart-quantity cart-header cart-column">CANTIDAD</span>
-        </div>
-        <div class="cart-items">
-        </div>
-        <div class="cart-total">
-            <strong class="cart-total-title">Total</strong>
-            <span class="cart-total-price">S/0</span>
-        </div>
-        <button class="btn btn-primary btn-purchase" type="button" onclick="createPDF()">PURCHASE</button>
-        <div id="elementH"></div>
-    </section>
-    <footer class="main-footer">
-        <div class="container main-footer-container">
-            <h3 class="band-name" id="genesis">The Generics</h3>
-            <ul class="nav footer-nav">
-                <li>
-                    <a href="https://www.youtube.com" target="_blank">
-                        <img src="Images/YouTube Logo.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.spotify.com" target="_blank">
-                        <img src="Images/Spotify Logo.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com" target="_blank">
-                        <img src="Images/Facebook Logo.png">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </footer>
+    <script src="../../javascript/carrito.js"></script>
+    <script src="../../javascript/pedido.js"></script>
 
-    <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
-    <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
-    <script src="../../javascript/GalletaMain.js"></script>
-    <script src="../../javascript/CategoriaMain.js"></script>
 </body>
 
 </html>
