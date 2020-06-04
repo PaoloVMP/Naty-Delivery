@@ -77,7 +77,7 @@ header {
 }
 
 .show {
-    height: 305px !important;
+    height: 185px !important;
 }
 
 @media screen and (max-width:700px) {

@@ -76,7 +76,7 @@ header {
 }
 
 .show {
-    height: 305px !important;
+    height: 185px !important;
 }
 
 @media screen and (max-width:700px) {
@@ -164,4 +164,18 @@ table .cantidad {
 
 .font-weight-bold {
     width: 70px;
+}
+
+.container-boton {
+    text-align: center;
+}
+
+.container-boton .btn .btn-primary {
+    color: white;
+    background-color: #ec1c24;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+    padding: 13px 40px;
+    font-size: 20px;
 }

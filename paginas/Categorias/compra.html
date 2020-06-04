@@ -3,29 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" href="../../img/heart-shaped.png">
+    <meta name="description" content="Compra... carrito de compras aumenta en cantidad los productos y/o elimina las que no necesitas"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../../estilos/compraStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
 
 
-    <title>Carrito Compras en JavaScript</title>
+    <title>Compra - Carrito de compras</title>
 
 </head>
 
 <body>
     <header>
         <div class="logo-nav">
-            <a href="../index.html">N A T Y</a>
+            <a href="../../index.html">N A T Y</a>
         </div>
         <nav id="menu">
             <ul>
-                <li><a href="#">Al Por Mayor</a></li>
-                <li><a href="#">Al Por Menor</a></li>
-                <li><a href="ContactoPersonal.html">Contacto</a></li>
-                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../categorias.html">Categoria</a></li>
+                <li><a href="../ContactoPersonal.html">Contacto</a></li>
+                <li><a href="../../index.html">Inicio</a></li>
             </ul>
         </nav>
         <div class="menu-toggle">
@@ -36,7 +36,7 @@
     <section class="container">
 
         <h2 class="d-flex justify-content-center mb-3">Realizar Compra</h2>
-        
+
         <form id="procesar-pago" action="#" method="post">
             <div class="form-group row">
                 <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente :</label>
@@ -56,6 +56,11 @@
                 <table class="table" id="lista-compra">
                     <thead>
                         <tr>
+                            <th colspan="5" scope="col">
+                                <img src="../../img/Logo.png" alt="">
+                            </th>
+                        </tr>
+                        <tr>
                             <th scope="col">Imagen</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Precio</th>
@@ -70,14 +75,12 @@
                         <th scope="col">
                             <p id="subtotal"></p>
                         </th>
-                        <!-- <th scope="col"></th> -->
                     </tr>
                     <tr>
                         <th colspan="4" scope="col" class="aling">IGV :</th>
                         <th scope="col">
                             <p id="igv"></p>
                         </th>
-                        <!-- <th scope="col"></th> -->
                     </tr>
                     <tr>
                         <th colspan="4" scope="col" class="aling">TOTAL :</th>
@@ -85,7 +88,6 @@
                             <input id="total" name="monto" class="font-weight-bold" readonly
                                 style="background-color: white;"></input>
                         </th>
-                        <!-- <th scope="col"></th> -->
                     </tr>
 
                 </table>
@@ -100,12 +102,41 @@
             </div>
         </form>
     </section>
+    <section>
+        <div class="container-boton">
+            <div class="btn">
+                <button class="btn-primary" href="#" onclick="downloadDoc()">Descargar PDF</button>
+            </div>
+        </div>
+    </section>
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
     <script src="../../javascript/carrito.js"></script>
     <script src="../../javascript/compra.js"></script>
+    <script src="../../javascript/main.js"></script>
+
+    <script type="text/javascript" src="../../css/jquery.js"></script>
+    <script type="text/javascript" src="../../css/html2canvas.min.js"></script>
+    <script type="text/javascript" src="../../css/pdfmake.min.js"></script>
 
 </body>
+
+<script type="text/javascript">
+    function downloadDoc() {
+        html2canvas($("#lista-compra")[0], {
+            onrendered: function (canvas) {
+                var data = canvas.toDataURL();
+                var docDefinition = {
+                    content: [{
+                        image: data,
+                        width: 620
+                    }]
+                };
+                pdfMake.createPdf(docDefinition).download("Boleta.pdf");
+            }
+        })
+    }
+</script>
 
 </html>
