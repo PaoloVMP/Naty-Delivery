@@ -145,9 +145,11 @@ class Carrito {
                 <td>${producto.titulo}</td>
                 <td>${producto.precio}</td>
                 <td>
-                    <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}>
+                    <button class="restar btnSumResta">-</button>
+                    <span class="cantidad">${producto.cantidad}</span>
+                    <button class="sumar btnSumResta">+</button>
                 </td>
-                <td id='subtotales' class="subtotales">${producto.precio * producto.cantidad}</td>
+                <td class="subtotales">${producto.precio * producto.cantidad}</td>
                 <td>
                     <a href="#" class="borrar-producto fas fa-times-circle" style="font-size:30px" data-id="${producto.id}"></a>
                 </td>
@@ -195,45 +197,78 @@ class Carrito {
         }
     }
 
-    //Calcular montos
-    calcularTotal(){
-        let productosLS;
-        let total = 0, igv = 0, subtotal = 0;
-        productosLS = this.obtenerProductosLocalStorage();
-        for(let i = 0; i < productosLS.length; i++){
-            let element = Number(productosLS[i].precio * productosLS[i].cantidad);
-            total = total + element;
-            
-        }
-        
-        igv = parseFloat(total * 0.18).toFixed(2);
-        subtotal = parseFloat(total-igv).toFixed(2);
-
-        document.getElementById('subtotal').innerHTML = "S/. " + subtotal;
-        document.getElementById('igv').innerHTML = "S/. " + igv;
-        document.getElementById('total').value = "S/. " + total.toFixed(2);
-    }
-
     obtenerEvento(e) {
         e.preventDefault();
         let id, cantidad, producto, productosLS;
         if (e.target.classList.contains('cantidad')) {
             producto = e.target.parentElement.parentElement;
             id = producto.querySelector('a').getAttribute('data-id');
-            cantidad = producto.querySelector('input').value;
-            let actualizarMontos = document.querySelectorAll('#subtotales');
+            cantidad = producto.querySelector('.cantidad').textContent;
+            let actualizarMontos = document.querySelectorAll('.subtotales');
             productosLS = this.obtenerProductosLocalStorage();
             productosLS.forEach(function (productoLS, index) {
                 if (productoLS.id === id) {
-                    productoLS.cantidad = cantidad;                    
-                    actualizarMontos[index].innerHTML = Number(cantidad * productosLS[index].precio);
-                }    
+                    productoLS.cantidad = cantidad;
+                    actualizarMontos[index].innerHTML = Number(cantidad * productosLS[index].precio).toFixed(2);
+                }
             });
             localStorage.setItem('productos', JSON.stringify(productosLS));
-            
-        }
-        else {
+            this.calcularTotal(); // Asegúrate de recalcular el total después de actualizar la cantidad
+        } else {
             console.log("click afuera");
         }
     }
+
+    // Añadir o disminuir cantidad de productos
+    actualizarCantidad(e) {
+        let cantidadSpan, id, producto, productosLS;
+        if (e.target.classList.contains('sumar') || e.target.classList.contains('restar')) {
+            producto = e.target.parentElement.parentElement;
+            id = producto.querySelector('a').getAttribute('data-id');
+            cantidadSpan = e.target.parentElement.querySelector('.cantidad');
+            if (e.target.classList.contains('sumar')) {
+                cantidadSpan.textContent = parseInt(cantidadSpan.textContent) + 1;
+            } else if (e.target.classList.contains('restar') && cantidadSpan.textContent > 1) {
+                cantidadSpan.textContent = parseInt(cantidadSpan.textContent) - 1;
+            }
+            productosLS = this.obtenerProductosLocalStorage();
+            productosLS.forEach(function (productoLS) {
+                if (productoLS.id === id) {
+                    productoLS.cantidad = cantidadSpan.textContent;
+                    producto.querySelector('.subtotales').innerHTML = Number(cantidadSpan.textContent * productoLS.precio).toFixed(2);
+                }
+            });
+            localStorage.setItem('productos', JSON.stringify(productosLS));
+            this.calcularTotal(); // Recalcular el total después de actualizar la cantidad
+        }
+    }
+
+    // Calcular montos
+    calcularTotal() {
+        let productosLS;
+        let total = 0, igv = 0, subtotal = 0;
+        productosLS = this.obtenerProductosLocalStorage();
+        for (let i = 0; i < productosLS.length; i++) {
+            let element = Number(productosLS[i].precio * productosLS[i].cantidad);
+            total = total + element;
+        }
+
+        igv = parseFloat(total * 0.18).toFixed(2);
+        subtotal = parseFloat(total - igv).toFixed(2);
+
+        document.getElementById('subtotal').innerHTML = "S/. " + subtotal;
+        document.getElementById('igv').innerHTML = "S/. " + igv;
+        document.getElementById('total').innerHTML = "S/. " + total.toFixed(2);
+    }
 }
+
+// Inicializar eventos
+document.addEventListener('DOMContentLoaded', () => {
+    const carrito = new Carrito();
+    document.querySelectorAll('.sumar, .restar').forEach(boton => {
+        boton.addEventListener('click', (e) => carrito.actualizarCantidad(e));
+    });
+    document.querySelectorAll('.cantidad').forEach(span => {
+        span.addEventListener('input', (e) => carrito.obtenerEvento(e));
+    });
+});

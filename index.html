@@ -17,12 +17,13 @@
 
     <header>
         <div class="logo-nav">
-            <a href="index.html">N A T Y</a>
+            <a href="index.html"><img src="img/Logo.png" alt=""></a>
+            
         </div>
         <nav id="menu">
             <ul>
                 <li><a href="paginas/Categorias/compra.html">SU CARRITO</a></li>
-                <li><a href="paginas/categorias.html">Categorias</a></li>
+                <li><a href="index.html#grid">Categorias</a></li>
                 <li><a href="paginas/ContactoPersonal.html">contacto</a></li>  
                 <li><a href="#">Inicio</a></li>
             </ul>
@@ -35,29 +36,94 @@
     <section>
         <div class="container-logo">
             <div class="logo">
-                <img src="img/Logo.png" alt="">
+                <!-- <img src="img/Logo.png" alt=""> -->
                 <img src="img/delivery.png" alt="">
             </div>
-            <p>Todo lo que necesitas para tu tienda en una sola tienda</p>
+           <!-- <p>Todo lo que necesitas para tu tienda en una sola tienda</p> -->
         </div> 
     </section>  
 
-   <section class="cajas">
-    <div class="contenedor">
+    <!-- Categorias-->    
+    <div class="container">    
         
-            <div class="imagen">
-                <a href="paginas/categorias.html">
-                    <img src="img/por_mayor.png" alt="">
-                </a>
+        <section class="grid" id="grid">
+
+            <div class="item"
+                data-categoria="galletas"
+                data-etiquetas="galletas aguas lines packs"
+                data-description=""
+            >
+                <div class="container-item">
+                    <a href="../paginas/Categorias/Galletas.html">
+                        <img src="../img/categorias/galletas.png" alt="">
+                    </a>
+                </div>
             </div>
-            <div class="imagen">
-                <a href="paginas/ContactoPersonal.html">
-                    <img src="img/por_menor.png" alt="">
-                </a>
+
+            <div class="item"
+                data-categoria="bocaditos"
+                data-etiquetas="ajonjolis oleoles marsmellos"
+                data-description=""
+            >
+                <div class="container-item">
+                    <a href="../paginas/Categorias/bocaditos.html">
+                        <img src="../img/categorias/bocaditos.png" alt="">
+                    </a>
+                </div>
             </div>
-       
-    </div>    
-   </section>
+
+            <div class="item"
+                data-categoria="canchas"
+                data-etiquetas="canchas trigos fideos aritos"
+                data-description=""
+            >
+                <div class="container-item">
+                    <a href="../paginas/Categorias/canchas.html">
+                        <img src="../img/categorias/canchas.png" alt="">
+                    </a>
+                </div>
+            </div>            
+        
+            <div class="item"
+                data-categoria="frituras"
+                data-etiquetas="frituras camotes papas habas"
+                data-description=""
+            >
+                <div class="container-item">
+                    <a href="../paginas/Categorias/frituras.html">
+                        <img src="../img/categorias/frituras.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="item"
+                data-categoria="reposterias"
+                data-etiquetas="reposterias kekes alfajores pasteles"
+                data-description=""
+            >
+                <div class="container-item">
+                    <a href="../paginas/Categorias/reposterias.html">
+                        <img src="../img/categorias/reposterias.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="item"
+                data-categoria="tiras"
+                data-etiquetas="tiras papas pikeos cheetos"
+                data-description=""
+            >
+                <div class="container-item">
+                    <a href="../paginas/Categorias/tiras.html">
+                        <img src="../img/categorias/Tiras.png" alt="">
+                    </a>
+                </div>
+            </div>            
+
+        </section>
+
+    </div>
+    <!-- Categorias-->
 
     <section>
         <div class="social-networks">
@@ -78,6 +144,8 @@
     <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
     <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
     <script src="javascript/main.js"></script>
+
+    <script src="../javascript/CategoriaMain.js"></script>
 
 </body>
 </html>

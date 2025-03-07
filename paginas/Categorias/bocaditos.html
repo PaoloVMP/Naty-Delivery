@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
 
+
     <title>Bocaditos</title>
 </head>
 
@@ -17,13 +18,19 @@
     
     <header>
         <div class="logo-nav">
-            <a href="../../index.html">N A T Y</a>
-            
+            <a href="../../index.html"><img src="../../img/Logo.png" alt=""></a>
+
         </div>
+
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Buscar...">
+            <button>🔍</button>
+        </div>
+
         <nav id="menu">
             <ul>
                 <li><a href="../../paginas/Categorias/compra.html">SU CARRITO</a></li>
-                <li><a href="../categorias.html">Categorias</a></li>             
+                <li><a href="../../index.html#grid">Categorias</a></li>
                 <li><a href="../ContactoPersonal.html">Contacto</a></li>
                 <li><a href="../../index.html">Inicio</a></li>
             </ul>
@@ -31,8 +38,12 @@
         <div class="menu-toggle">
             <i class="fa fa-bars"></i>
         </div>
-    </header>
 
+        <button class="carrito-btn" onclick="toggleCarrito()">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
+    </header>
+    
     <main class="container content-section">    
 
         <h1 class="section-header">Bocaditos</h1>
@@ -231,8 +242,8 @@
         </div>
     </main>
     
-    <section class="container content-section">
-        <h2 class="section-header">Productos Seleccionados</h2>
+    <section class="container content-section container-carrito" id="container-carrito">
+        <h1 class="section-header" class="carrito-btn" onclick="toggleCarrito()">Productos Seleccionados</h1>
             <div class="collapse navbar-collapse shop-items" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                         <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
@@ -258,6 +269,8 @@
     <script src="../../javascript/main.js"></script>
     <script src="../../javascript/carrito.js"></script>
     <script src="../../javascript/pedido.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 
 </body>
 

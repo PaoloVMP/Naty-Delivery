@@ -7,11 +7,13 @@
     <meta name="description" content="Compra... carrito de compras aumenta en cantidad los productos y/o elimina las que no necesitas"/>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../../estilos/compraStyle.css">
+    <link rel="stylesheet" href="../../estilos/IndexStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.30/jspdf.plugin.autotable.min.js"></script>
     <title>Compra - Carrito de compras</title>
 
 </head>
@@ -19,12 +21,13 @@
 <body>
     <header>
         <div class="logo-nav">
-            <a href="../../index.html">N A T Y</a>
+            <a href="../../index.html"><img src="../../img/Logo.png" alt=""></a>
+            
         </div>
         <nav id="menu">
             <ul>
-                <li><a href="../categorias.html">Categoria</a></li>
-                <li><a href="../ContactoPersonal.html">Contacto</a></li>
+                <li><a href="../../index.html#grid">Categorias</a></li>
+                <li><a href="paginas/ContactoPersonal.html">contacto</a></li>  
                 <li><a href="../../index.html">Inicio</a></li>
             </ul>
         </nav>
@@ -35,29 +38,28 @@
 
     <section class="container">
 
-        <h2 class="d-flex justify-content-center mb-3">Realizar Compra</h2>
-
-        <form id="procesar-pago" action="#" method="post">
-            <div class="form-group row">
-                <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente :</label>
-                <div class="col-12 col-md-10">
-                    <input type="text" class="form-control" id="cliente" placeholder="Ingresa nombre cliente"
-                        name="destinatario">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="email" class="col-12 col-md-2 col-form-label h2">Correo :</label>
-                <div class="col-12 col-md-10">
-                    <input type="text" class="form-control" id="correo" placeholder="Ingresa tu correo" name="cc_to">
-                </div>
-            </div>
+        <h2 class="section-header">Realizar Compra</h2>
 
             <div id="carrito" class="form-group table-responsive">
                 <table class="table" id="lista-compra">
                     <thead>
                         <tr>
-                            <th colspan="5" scope="col">
-                                <img src="../../img/Logo.png" alt="">
+                            <th colspan="4" scope="col">
+                                <form id="formulario" action="#" method="post">
+                                    <label for="nombre" class="section-header">Cliente :</label>
+                                    <div class="search-container">
+                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa nombre cliente"
+                                            name="destinatario">
+                                    </div>
+                                    <label for="direccion" class="section-header">Direccion :</label>
+                                    <div class="search-container">
+                                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ingresa tu dirección" name="cc_to">
+                                    </div>
+                            </form>
+                            </th>
+                            <th>
+                                <span id="fecha-actual"></span>
+                                <img class="imagen" src="../../img/Logo.png" alt="">
                             </th>
                         </tr>
                         <tr>
@@ -85,29 +87,26 @@
                     <tr>
                         <th colspan="4" scope="col" class="aling">TOTAL :</th>
                         <th scope="col">
-                            <input id="total" name="monto" class="font-weight-bold" readonly
-                                style="background-color: white;"></input>
+                            <span id="total" name="monto" class="font-weight-bold" readonly
+                                style="background-color: white;"></span>
                         </th>
                     </tr>
 
                 </table>
             </div>
+
             <div class="container-boton">
                 <div class="btn">
-                    <a href="../categorias.html" class="btn-a">Seguir comprando</a>
+                    <a href="../../index.html#grid" class="btn-a">Seguir comprando</a>
                 </div>
                 <div class="btn">
-                    <button href="#" class="btn-primary" id="procesar-compra">Realizar compra</button>
+                    <button id="generar-pdf" class="btn-a" onclick="generarYEnviarPDF()">📄 Generar PDF y Enviar por WhatsApp</button>
+                </div>
+                <div class="btn">
+                    <button id="btnEnviar" type="submit" class="btn-primary" href="#" onclick="downloadDocPDF()">Descargar la boleta y envia a nuestro WhatsApp</button>
                 </div>
             </div>
-        </form>
-    </section>
-    <section>
-        <div class="container-boton">
-            <div class="btn">
-                <button class="btn-primary" href="#" onclick="downloadDoc()">Descargar PDF</button>
-            </div>
-        </div>
+        
     </section>
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -123,20 +122,74 @@
 </body>
 
 <script type="text/javascript">
-    function downloadDoc() {
+    document.addEventListener('DOMContentLoaded', function() {
+        // Obtener la fecha actual
+        const fechaActual = new Date().toLocaleDateString("es-ES");
+        // Insertar la fecha en el elemento con el ID 'fecha-actual'
+        document.getElementById('fecha-actual').textContent = fechaActual;
+    });
+
+    document.getElementById("btnEnviar").addEventListener("click", function () {
+        
+        let nombre = document.getElementById("nombre").value.trim();
+        let direccion = document.getElementById("direccion").value.trim();
+
+        if (nombre === "" || direccion === "") {
+            return;
+        }
+        downloadDoc(nombre, direccion);
+    });
+
+    function downloadDocPDF() {
+        let nombre = document.getElementById("nombre").value.trim();
+        let direccion = document.getElementById("direccion").value.trim();
+        let total = document.getElementById("total").textContent.trim() || "0.00";
+
+        if (nombre === "" || direccion === "") {
+            alert("⚠️ Por favor ingrese su nombre y su direccion completa antes de enviar.");
+            return;
+        }
+
+        downloadDoc(nombre, direccion, function() {
+            const phoneNumber = "51979288445";
+            const message = `Hola, aquí está mi pedido:
+    📌*Nombre:* ${nombre}
+    📌*Dirección:* ${direccion}
+    🛒*Total a pagar:* ${total}
+
+    📎 Adjunto el PDF (Boleta) con el detalle.`;
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, "_blank");
+        });
+    }
+
+    
+    function downloadDoc(ombre, direccion, callback) {
+        document.querySelectorAll('button').forEach(button => button.style.display = 'none');
+
         html2canvas($("#lista-compra")[0], {
             onrendered: function (canvas) {
                 var data = canvas.toDataURL();
                 var docDefinition = {
-                    content: [{
+                    content: [
+                    {
                         image: data,
-                        width: 620
+                        width: 642
                     }]
                 };
-                pdfMake.createPdf(docDefinition).download("Boleta.pdf");
+                pdfMake.createPdf(docDefinition).download("Boleta_pc.pdf");
+
+                document.querySelectorAll('button').forEach(button => button.style.display = 'block');
+
+                setTimeout(() => {
+                location.reload();
+                }, 500);
+                if (callback) callback();
             }
-        })
+        });
     }
+
+
 </script>
 
 </html>

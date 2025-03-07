@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
-
     <title>Galletas</title>
 </head>
 
@@ -19,13 +18,19 @@
 
     <header>
         <div class="logo-nav">
-            <a href="../../index.html">N A T Y</a>
+            <a href="../../index.html"><img src="../../img/Logo.png" alt=""></a>
 
         </div>
+
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Buscar...">
+            <button>🔍</button>
+        </div>
+
         <nav id="menu">
             <ul>
                 <li><a href="../../paginas/Categorias/compra.html">SU CARRITO</a></li>
-                <li><a href="../categorias.html">Categorias</a></li>
+                <li><a href="../../index.html#grid">Categorias</a></li>
                 <li><a href="../ContactoPersonal.html">Contacto</a></li>
                 <li><a href="../../index.html">Inicio</a></li>
             </ul>
@@ -33,14 +38,17 @@
         <div class="menu-toggle">
             <i class="fa fa-bars"></i>
         </div>
+
+        <button class="carrito-btn" onclick="toggleCarrito()">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
     </header>
 
     <h1 class="section-header">Galletas</h1>
 
     <section class="container content-section">
 
-        
-
+        <!-- Productos-->
         <div class="shop-items" id="lista-productos">
 
             <h2 class="section-header">Marca Costa</h2>
@@ -815,10 +823,11 @@
 
         </div>
     </section>
-
-
-    <section class="container content-section">
-        <h1 class="section-header">Productos Seleccionados</h1>
+    <!-- Productos-->
+    
+    <!--Lista de productos seleccionados (carrito)-->
+    <section class="container content-section container-carrito" id="container-carrito">    
+    <h1 class="section-header" class="carrito-btn" onclick="toggleCarrito()">Productos Seleccionados</h1>
         <div class="collapse navbar-collapse shop-items" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
@@ -835,8 +844,8 @@
                     </table>
                 </div>
 
-                <a href="#" id="vaciar-carrito" class="btn btn-primary">Vaciar Carrito</a>
-                <a href="#" id="procesar-pedido" class="btn btn-primary">Procesar Compra</a>
+                <a href="#" id="vaciar-carrito" class="btn btn-primary btn-carrito">Vaciar Carrito</a>
+                <a href="#" id="procesar-pedido" class="btn btn-primary btn-carrito">Procesar Compra</a>
             </ul>
         </div>
     </section>
@@ -844,6 +853,7 @@
     <script src="../../javascript/main.js"></script>
     <script src="../../javascript/carrito.js"></script>
     <script src="../../javascript/pedido.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </body>
 
