@@ -354,11 +354,12 @@
     }
 
     #menu ul li a {
+        display: block;
+        width: 100%;
+        height: 62px;
         color: white;
         font-size: 20px;
-        height: 0;
         border-bottom: 1px solid #ff5364;
-        width: 100%;
     }
 
     #menu ul li a:hover {
@@ -458,11 +459,13 @@
         }
 
         #menu ul li a {
+            display: block;
+            width: 100%;
+            height: 62px;
             color: white;
             font-size: 15px;
             border-bottom: 1px solid #ff5364;
             align-items: center;
-            top: 0;
         }
 
         #menu ul li a:hover {
@@ -486,13 +489,13 @@
 
     /* tamañano de pantalla de 500px a menos INCIO */
     @media screen and (max-width: 500px){
-        .container-carrito p{
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #333;
-        }
+    .container-carrito p{
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #333;
+    }
 
-         /*buscador*/
+    /*buscador*/
 
     .search-container {
         display: flex;
@@ -502,7 +505,7 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         height: 45px;
         margin: 10px auto;
-        width: 250px;
+        width: 71%;
     }
 
     /* Estilo del input */
@@ -512,6 +515,7 @@
         padding: 5px;
         font-size: 16px;
         border-radius: 30px;
+        width: 100%;
     }
 
     /* Estilo del botón */
@@ -523,7 +527,6 @@
         cursor: pointer;
         border-radius: 25px;
         font-size: 12px;
-        width: 30px;
     }
 
     .search-container button:hover {
