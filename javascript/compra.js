@@ -5,7 +5,6 @@ const procesarCompraBtn = document.getElementById('procesar-compra');
 const cliente = document.getElementById('cliente');
 const correo = document.getElementById('correo');
 
-
 cargarEventos();
 
 function cargarEventos() {
@@ -22,25 +21,11 @@ function cargarEventos() {
     carrito.addEventListener('change', (e) => { compra.obtenerEvento(e) });
     carrito.addEventListener('keyup', (e) => { compra.obtenerEvento(e) });
 
-    document.getElementById('generar-pdf').addEventListener('click', generarYEnviarPDF);
-
+    document.getElementById('generar-pdf').addEventListener('click', generarPDF);
+    document.getElementById('enviar-whatsapp').addEventListener('click', enviarWhatsApp);
 }
 
-
-// Crear una instancia de jsPDF
-const doc = new jsPDF();
-
-// Obtener la fecha actual en formato dd/mm/yyyy
-const fecha = new Date();
-const fechaFormateada = fecha.toLocaleDateString("es-ES");
-
-// Agregar la fecha al PDF en la parte superior derecha
-doc.setFontSize(10);
-doc.text(`Fecha: ${fechaFormateada}`, 150, 10); // Posición (X:150, Y:10)
-
-// Luego, sigues generando el contenido del PDF...
-
-async function generarYEnviarPDF() {
+function generarPDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
@@ -107,18 +92,25 @@ async function generarYEnviarPDF() {
     // 4️⃣ Descargar el PDF automáticamente
     const pdfFileName = "boleta_celular.pdf";
     doc.save(pdfFileName);
+}
 
-    // 5️⃣ Abrir WhatsApp con mensaje preescrito
-    setTimeout(() => {
-        const mensaje = `Hola, aquí está mi pedido:
+function enviarWhatsApp() {
+    const nombre = document.getElementById("nombre").value.trim();
+    const direccion = document.getElementById("direccion").value.trim();
+    const total = document.getElementById("total").textContent.trim() || "0.00";
+
+    if (nombre === "" || direccion === "") {
+        alert("⚠️ Por favor, completa todos los campos antes de enviar por WhatsApp.");
+        return;
+    }
+
+    const telefonoDestino = "51948908967"; // Cambia por el número real
+    const mensaje = `Hola, aquí está mi pedido:
 📌*Nombre:* ${nombre}
 📌*Dirección:* ${direccion}
 🛒*Total a pagar:* ${total}
 
 📎 Adjunto el PDF con el detalle.`;
-
-        const telefonoDestino = "51948908967"; // Cambia por el número real
-        const whatsappURL = `https://wa.me/${telefonoDestino}?text=${encodeURIComponent(mensaje)}`;
-        window.open(whatsappURL, "_blank");
-    }, 2000); // Esperamos 2 segundos para que se descargue el PDF antes de abrir WhatsApp
+    const whatsappURL = `https://wa.me/${telefonoDestino}?text=${encodeURIComponent(mensaje)}`;
+    window.open(whatsappURL, "_blank");
 }
