@@ -104,7 +104,7 @@ function enviarWhatsApp() {
         return;
     }
 
-    const telefonoDestino = "51948908967"; // Cambia por el número real
+    const telefonoDestino = "51927085841"; // Cambia por el número real
     const mensaje = `Hola, aquí está mi pedido:
 📌*Nombre:* ${nombre}
 📌*Dirección:* ${direccion}
