@@ -307,7 +307,7 @@
             color: #333;
             text-align: center;
             font-size: 2.5em;
-            margin-top: 15%;
+            margin-top: 1px;
         }
 
         /*buscador*/
@@ -516,7 +516,7 @@
         color: #333;
         text-align: center;
         font-size: 2.5em;
-        margin-top: 25%;
+        margin-top: 50px;
     }
 
     .content-section {
